@@ -1,4 +1,4 @@
 <x-layout>
-<h1>Welcome homepage</h1>
+<h1>Welcome homepage😁git </h1>
 
 </x-layout>
