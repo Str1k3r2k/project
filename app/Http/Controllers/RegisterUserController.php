@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\User;
+use App\Models\User;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Password;
@@ -20,6 +20,7 @@ class RegisterUserController extends Controller
             'last_name'     => ['required'],
             'email'         => ['required', 'email'],
             'password'      => ['required', Password::min(6), 'confirmed'],
+            
         ]);
 
         $user = User::create($attributes);
