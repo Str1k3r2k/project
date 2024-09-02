@@ -6,7 +6,16 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Mail\JobPosted;
+use App\Jobs\TranslateJob;
+use App\Models\job;
 
+
+ROUTE::get('test', function(){
+    $job = job::first();
+    TranslateJob::dispatch($job);
+
+    return 'DONE';
+});
 
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
