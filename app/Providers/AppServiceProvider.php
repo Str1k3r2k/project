@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Pagination\Paginator;
+use Illuminate\Foundation\Auth\User;
+use App\Models\job;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Model::preventLazyLoading();
 
-       // Paginator::useBootstrapFive();
+        // Gate::define('edit-job', function (User $user, job $job) {
+        //     return $job->employer->user->is($user);
+        // });
     }
 }
