@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\SessionController;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
+use App\Mail\JobPosted;
+
 
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
